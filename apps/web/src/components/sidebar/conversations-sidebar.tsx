@@ -56,7 +56,7 @@ export function ConversationsSidebar({ onOpenSettings }: { onOpenSettings: () =>
   const list = useMemo(() => items, [items]);
 
   return (
-    <aside className="w-[320px] border-r border-zinc-900 bg-zinc-950/60 pt-4">
+    <aside className="flex h-full w-[320px] flex-col border-r border-zinc-900 bg-zinc-950/60">
       <div className="p-3 space-y-2">
         <NewChatButton onClick={newChat} />
         <UploadDialog />
@@ -71,7 +71,7 @@ export function ConversationsSidebar({ onOpenSettings }: { onOpenSettings: () =>
         Conversas
       </div>
 
-      <ScrollArea className="h-[calc(100vh-170px)] px-2 pb-3">
+      <ScrollArea className="min-h-0 flex-1 px-2 pb-3">
         <div className="space-y-1">
           {list.length === 0 ? (
             <div className="px-2 py-6 text-sm text-zinc-400">
