@@ -1,0 +1,86 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+.vscode/
+.idea/
+
+# =========================
+# ENV / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# =========================
+# Python (FastAPI)
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenv
+.venv/
+venv/
+ENV/
+
+# =========================
+# Node / Next.js
+# =========================
+node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Build / Cache
+# =========================
+.cache/
+.eslintcache
+.turbo/
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Databases / Local Data
+# =========================
+data/
+*.sqlite
+*.db
+
+# =========================
+# Vector Stores (RAG)
+# =========================
+chroma/
+chromadb/
+*.bin
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Uploads / User Files
+# =========================
+uploads/
+docs/
