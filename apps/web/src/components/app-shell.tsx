@@ -16,7 +16,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="h-screen w-screen overflow-hidden pt-4">
+    <div className="h-screen w-screen overflow-hidden">
       <div className="flex h-full">
         <ConversationsSidebar onOpenSettings={() => setOpenSettings(true)} />
 
