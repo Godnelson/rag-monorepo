@@ -1,5 +1,5 @@
 import uuid
-from fastapi import FastAPI, Depends, UploadFile, File, HTTPException
+from fastapi import FastAPI, Depends, UploadFile, File, HTTPException, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
@@ -50,6 +50,7 @@ def get_llm_and_embeddings():
 @app.post("/documents/upload")
 @limiter.limit("10/minute")
 async def upload_doc(
+    request: Request,
     file: UploadFile = File(...),
     _auth=Depends(require_api_key),
 ):
@@ -65,7 +66,7 @@ async def upload_doc(
 
 @app.post("/conversations")
 @limiter.limit("30/minute")
-def create_conversation(_auth=Depends(require_api_key), db: Session = Depends(get_db)):
+def create_conversation(request: Request, _auth=Depends(require_api_key), db: Session = Depends(get_db)):
     cid = str(uuid.uuid4())
     db.add(Conversation(id=cid))
     db.commit()
@@ -73,7 +74,12 @@ def create_conversation(_auth=Depends(require_api_key), db: Session = Depends(ge
 
 @app.get("/conversations/{conversation_id}")
 @limiter.limit("60/minute")
-def get_conversation(conversation_id: str, _auth=Depends(require_api_key), db: Session = Depends(get_db)):
+def get_conversation(
+    conversation_id: str,
+    request: Request,
+    _auth=Depends(require_api_key),
+    db: Session = Depends(get_db),
+):
     convo = db.get(Conversation, conversation_id)
     if not convo:
         raise HTTPException(404, "not found")
@@ -84,6 +90,7 @@ def get_conversation(conversation_id: str, _auth=Depends(require_api_key), db: S
 @limiter.limit("20/minute")
 async def chat(
     payload: dict,
+    request: Request,
     _auth=Depends(require_api_key),
     db: Session = Depends(get_db),
 ):
