@@ -56,7 +56,7 @@ export function ConversationsSidebar({ onOpenSettings }: { onOpenSettings: () =>
   const list = useMemo(() => items, [items]);
 
   return (
-    <aside className="w-[320px] border-r border-zinc-900 bg-zinc-950/60">
+    <aside className="w-[320px] border-r border-zinc-900 bg-zinc-950/60 pt-4">
       <div className="p-3 space-y-2">
         <NewChatButton onClick={newChat} />
         <UploadDialog />
