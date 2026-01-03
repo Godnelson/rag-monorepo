@@ -20,7 +20,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <div className="flex h-full">
         <ConversationsSidebar onOpenSettings={() => setOpenSettings(true)} />
 
-        <main className="flex-1">
+        <main className="flex flex-1 flex-col pt-4">
           <div className="flex items-center justify-between border-b border-zinc-900 px-4 py-3">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -37,7 +37,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             </Button>
           </div>
 
-          <div className="h-[calc(100vh-57px)]">{children}</div>
+          <div className="min-h-0 flex-1">{children}</div>
         </main>
       </div>
 
