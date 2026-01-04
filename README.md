@@ -52,7 +52,7 @@ docker compose -f infra/docker-compose.yml up --build
 
 ---
 
-## 👀 O que salta aos olhos (recrutador + time técnico)
+## 👀 Diferenciais
 **Produto**
 - **Experiência de chat limpa e objetiva**, com histórico por conversa e upload integrado.
 - **Setup curto**: sobe tudo com Docker e variáveis simples.
