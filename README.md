@@ -4,14 +4,6 @@ Uma stack completa para **Chat + RAG**, pronta para rodar localmente com **API F
 
 ---
 
-## 🎬 Demo (10–15s)
-![Demo do chat + upload](docs/demo.gif)
-
-> Dica: grave um GIF curto com chat + upload para deixar o repositório “portfólio‑ready”.
-> Coloque o arquivo em `docs/demo.gif` (não versionado por padrão).
-
----
-
 ## 🌟 Visão rápida
 - **Backend RAG** com ingestão de documentos e chat contextual.
 - **Frontend moderno** com histórico de conversas e upload de arquivos.
@@ -57,6 +49,19 @@ docker compose -f infra/docker-compose.yml up --build
 - Criar conversas e manter histórico.
 - Subir documentos e perguntar sobre o conteúdo.
 - Integrar a UI ao backend via API Base + X‑API‑Key.
+
+---
+
+## 👀 O que salta aos olhos (recrutador + time técnico)
+**Produto**
+- **Experiência de chat limpa e objetiva**, com histórico por conversa e upload integrado.
+- **Setup curto**: sobe tudo com Docker e variáveis simples.
+- **MVP funcional** com foco em velocidade de entrega e iteração.
+
+**Engenharia**
+- **Separação clara de camadas** (UI, API, infraestrutura).
+- **RAG pragmático**: ingestão → chunking → vector store → retrieval → chat.
+- **Pontos de evolução explícitos** (tradeoffs e roadmap abaixo).
 
 ---
 
