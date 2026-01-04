@@ -23,10 +23,10 @@ infra     -> docker-compose da stack completa
 ## 🗺️ Arquitetura (diagrama simples)
 ```mermaid
 flowchart LR
-  UI[Next.js UI] -->|HTTP + X-API-Key| API[FastAPI + LangChain]
-  API -->|Embeddings + RAG| VS[Chroma (persistente)]
-  API -->|LLM| LLM[OpenAI ou Ollama]
-  Docs[Uploads .txt/.md] --> API
+  UI["Next.js UI"] -->|"HTTP + API Key"| API["FastAPI + LangChain"]
+  API -->|"Embeddings + RAG"| VS["Chroma (persistente)"]
+  API -->|"LLM"| LLM["OpenAI ou Ollama"]
+  Docs["Uploads .txt e .md"] --> API
 ```
 
 ---
